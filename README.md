@@ -1,6 +1,6 @@
 # Salutation Service
 
-This repository contains the salutation microservice. It contains a single endpoint which returns a random salutation. To see an example response, visit the [Salutation Microservice Docs on Apiary](http://docs.l1monolith.apiary.io/#).
+This repository contains the salutation microservice. It contains a single endpoint which returns a random salutation. To see an example response, visit the [Salutation Microservice Docs on Apiary](http://docs.salutationmicroservice.apiary.io/#).
 
 The salutation microservice uses the Swift Package Manager to manage dependencies.
 
