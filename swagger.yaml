@@ -1,0 +1,38 @@
+swagger: "2.0"
+info:
+  title: "Salutation Microservice"
+  description: A microservice for random salutations.
+  termsOfService: https://www.udacity.com/legal
+  contact:
+    name: Jarrod Parkes
+    url: http://jarrodparkes.com
+    email: jarrod@udacity.com
+  license:
+    name: MIT
+    url: https://github.com/udacity/ios-short-s3-deploy/blob/master/LICENSE
+  version: 1.0.0
+basePath: /
+schemes:
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /:
+    get:
+      description: Returns a random salutation.
+      responses:
+        200:
+          description: A salutation.
+          schema:
+            $ref: '#/definitions/Salutation'
+definitions:
+  Salutation:
+    required:
+      - text
+    properties:
+      message:
+        type: string
+    example: 
+      message: A tender adieu.
