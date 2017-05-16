@@ -12,6 +12,7 @@ This repository contains the salutation microservice. It contains a single endpo
 
 ```swift
 // in main.swift...
+import Foundation
 
 // Resolve the port that we want the server to listen on
 let port: Int
