@@ -8,25 +8,40 @@ This repository contains the salutation microservice. It contains a single endpo
 
 > **Important**: Heroku doesn't allow use of port 80. Instead run the microservice using the default Kitura port of 8080.
 
-**1. Create `Procfile` to Specify Start Command**
+**1. Ensure Port Assignment Checks for $PORT Environment Variable**
+
+```swift
+// in main.swift...
+
+// Resolve the port that we want the server to listen on
+let port: Int
+let defaultPort = 80
+if let requestedPort = ProcessInfo.processInfo.environment["PORT"] {
+    port = Int(requestedPort) ?? defaultPort
+} else {
+    port = defaultPort
+}
+```
+
+**2. Create `Procfile` to Specify Start Command**
 
 ```
 web: <exec> --workers 3 --bind 0.0.0.0:$PORT
 ```
 
-**2. Create App on Heroku with Swift Buildpack**
+**3. Create App on Heroku with Swift Buildpack**
 
 ```bash
 heroku create --buildpack https://github.com/kylef/heroku-buildpack-swift.git
 ```
 
-**3. Add Remote Branch to Heroku App**
+**4. Add Remote Branch to Heroku App**
 
 ```bash
 heroku git:remote -a <app_name>
 ```
 
-**4. Push to Heroku**
+**5. Push to Heroku**
 
 ```bash
 git push heroku heroku:master
