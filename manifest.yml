@@ -1,0 +1,7 @@
+---
+applications:
+- name: salutation
+  random-route: true
+  memory: 256M
+  command: salutation
+  buildpack: swift_buildpack
