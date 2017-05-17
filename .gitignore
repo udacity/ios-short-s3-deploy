@@ -71,3 +71,6 @@ fastlane/test_output
 terraform.tfstate
 terraform.tfstate.backup
 .terraform
+
+# terraform-eb-docker
+Dockerrun.zip

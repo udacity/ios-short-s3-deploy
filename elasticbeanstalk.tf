@@ -9,7 +9,7 @@ module "elasticbeanstalk" {
   application_version     = "1.0.0"
   docker_image            = "docker.io/jarrodparkes/s3-salutation-runtime"
   docker_tag              = "1.0.0"
-  docker_ports            = ["8080"]
+  docker_ports            = ["80"]
   health_check            = "/"
 }
 
