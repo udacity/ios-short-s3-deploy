@@ -22,7 +22,7 @@ docker build -t s3-salutation:1.0.0 .
 **2] Run the Docker Image (start Bash shell)**
 
 ```bash
-docker run -rm -it -v $(pwd):/app -p 80:80 s3-salutation:1.0.0 /bin/bash
+docker run --rm -it -v $(pwd):/app -p 80:80 s3-salutation:1.0.0 /bin/bash
 ```
 
 **3] Build the Monolith**
