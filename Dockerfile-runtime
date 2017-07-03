@@ -1,0 +1,19 @@
+FROM ibmcom/swift-ubuntu-runtime:latest
+
+MAINTAINER Jarrod Parkes <jarrod@udacity.com>
+
+USER root
+
+# Expose port 80
+EXPOSE 80
+
+# Install system packages
+RUN apt-get update; \
+    apt-get dist-upgrade -y; \
+    apt-get install -y librtmp0 login passwd
+
+# Binaries should have been compiled against the correct platform (i.e. Ubuntu 14.04).
+RUN mkdir /root/salutation
+ADD .build/debug/salutation /root/salutation
+ADD .build/debug/*.so /root/salutation/
+CMD [ "sh", "-c", "/root/salutation/salutation" ]
