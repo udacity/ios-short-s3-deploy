@@ -1,0 +1,31 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: s3-salutation-runtime
+spec:
+  replicas: 3
+  template:
+    metadata:
+      name: s3-salutation-runtime
+      labels:
+        run: s3-salutation-runtime
+    spec:
+      containers:
+        - name: s3-salutation-runtime
+          image: "registry.ng.bluemix.net/jarrodparkes/s3-salutation-runtime"
+          imagePullPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: salutation-service
+  labels:
+    run: s3-salutation-runtime
+spec:
+  type: NodePort
+  selector:
+    run: s3-salutation-runtime
+  ports:
+   - protocol: TCP
+     port: 80
+     nodePort: 30080
