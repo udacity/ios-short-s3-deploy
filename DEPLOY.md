@@ -20,6 +20,8 @@ docker tag s3-salutation-runtime:1.0.0 registry.ng.bluemix.net/<space>/s3-saluta
 docker push registry.ng.bluemix.net/<space>/s3-salutation-runtime
 ```
 
+> **Note**: If you receive a "unauthorized: authentication required" message when trying to push your image to the Bluemix registry, then try the `bx cr login` command before reattempting.
+
 **3. Request Public IP from Bluemix**
 
 ```bash
