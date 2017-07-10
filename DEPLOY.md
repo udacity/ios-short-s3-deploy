@@ -40,7 +40,7 @@ bx login -a https://api.ng.bluemix.net
 docker push registry.ng.bluemix.net/<space>/s3-salutation-runtime
 ```
 
-> **Note**: If you receive a "unauthorized: authentication required" message when trying to push your image to the Bluemix registry, then try the `bx login`, `cf ic login`, or `bx login --sso` command to login before reattempting.
+> **Note**: If you receive a "unauthorized: authentication required" message when trying to push your image to the Bluemix registry, then try the `bx cr login` before reattempting.
 
 **4. Create Kubernetes Cluster on Bluemix**
 
