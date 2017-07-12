@@ -1,5 +1,5 @@
 module "elasticbeanstalk" {
-  source = "github.com/nicholasjackson/terraform-modules/elasticbeanstalk-docker"
+  source = "./modules"
 
   instance_type = "t2.nano"
 
