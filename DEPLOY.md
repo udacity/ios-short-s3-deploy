@@ -98,7 +98,7 @@ module "elasticbeanstalk" {
 # load terraform modules
 terraform get
 
-# create instrasture and deploy application using terraform
+# create infrastructure and deploy application using terraform
 terraform apply
 ```
 
