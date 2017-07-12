@@ -92,9 +92,13 @@ module "elasticbeanstalk" {
 
 > **Note**: If you don't set the `docker_image`, then it will use an instructor's runtime image by default. This should work in most cases, but if for some reason the Docker image is removed from the registry, then you will need to provide your own.
 
-**8. Run `terraform apply` to Create and Deploy Application to AWS**
+**8. Run `terraform get` and `terraform apply` to Create and Deploy Application to AWS**
 
 ```bash
+# load terraform modules
+terraform get
+
+# create instrasture and deploy application using terraform
 terraform apply
 ```
 
